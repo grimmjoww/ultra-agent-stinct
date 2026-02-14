@@ -1,7 +1,7 @@
 ---
 name: ultra-agent-stinct
 description: "Autonomous coding, debugging, and code maintenance. Use when the user asks to: fix a bug, debug an error, write code or scripts, run tests, review or refactor code, investigate stack traces or logs, make git commits, add a feature, or any coding task. Triggers: 'fix this', 'debug', 'write code', 'run tests', 'check the error', 'look at the code', 'commit', 'what's wrong with', 'refactor', 'add a feature', 'build', 'deploy', 'install'."
-version: 1.0.3
+version: 1.1.0
 author: grimmjoww
 homepage: https://github.com/grimmjoww/ultra-agent-stinct
 metadata: {"openclaw": {"emoji": "\u26a1", "os": ["darwin", "linux", "win32"]}}
@@ -11,23 +11,34 @@ metadata: {"openclaw": {"emoji": "\u26a1", "os": ["darwin", "linux", "win32"]}}
 
 Autonomous debugging, code writing, and project maintenance.
 
-## When to Activate
+## Always Follow These (Every Coding Task)
 
-Try to handle coding tasks naturally first. But if you:
-- **Get stuck** — a fix didn't work, tests still failing after your first attempt
-- **Hit something complex** — multi-file bugs, unfamiliar codebase, architectural issues
-- **Need structure** — lots of files involved, not sure where to start
+These rules apply whether you're freestyling or in full workflow mode. No exceptions.
 
-Then **activate Ultra Agent Stinct** — follow the structured workflows below step by step. They'll keep you organized, catch edge cases, and make sure nothing slips through.
-
-## Safety Rules (ALWAYS)
-
+### Safety
 1. **Read before edit.** Never `edit` without `read` first — exact text match required or it fails
 2. **`write` overwrites entirely.** Use `edit` for changes to existing files
 3. **Never delete without asking.** Prefer safe deletion over `rm -rf`
 4. **Never push without asking.** `git push` only when the user explicitly says to
 5. **Never commit without asking.** Stage and commit only on request
 6. **Backup awareness.** Before large refactors, suggest a branch or stash
+
+### Good Practices
+7. **Always verify your fix.** After every change, re-run the failing command or tests. Never assume it worked
+8. **Explain what you did.** After fixing, briefly tell the user what was wrong and what you changed
+9. **Read the error first.** Don't guess at fixes — read the actual error message, stack trace, or test output before touching code
+10. **Minimal changes.** Fix the bug, don't refactor the neighborhood. Keep diffs small and focused
+
+## When to Activate Full Workflow
+
+Handle simple tasks naturally while following the rules above. But if you:
+- **Get stuck** — a fix didn't work, tests still failing after your first attempt
+- **Hit something complex** — multi-file bugs, unfamiliar codebase, architectural issues
+- **Need structure** — lots of files involved, not sure where to start
+
+Then **activate Ultra Agent Stinct** — follow the full structured workflows below step by step.
+
+---
 
 ## Debug Workflow
 
