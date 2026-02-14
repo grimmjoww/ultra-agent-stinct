@@ -1,7 +1,7 @@
 ---
 name: ultra-agent-stinct
 description: "Autonomous coding, debugging, and code maintenance. Use when the user asks to: fix a bug, debug an error, write code or scripts, run tests, review or refactor code, investigate stack traces or logs, make git commits, add a feature, or any coding task. Triggers: 'fix this', 'debug', 'write code', 'run tests', 'check the error', 'look at the code', 'commit', 'what's wrong with', 'refactor', 'add a feature', 'build', 'deploy', 'install'."
-version: 1.0.1
+version: 1.0.2
 author: grimmjoww
 homepage: https://github.com/grimmjoww/ultra-agent-stinct
 metadata: {"openclaw": {"emoji": "\u26a1", "os": ["darwin", "linux", "win32"]}}
@@ -9,7 +9,9 @@ metadata: {"openclaw": {"emoji": "\u26a1", "os": ["darwin", "linux", "win32"]}}
 
 # Ultra Agent Stinct
 
-Autonomous debugging, code writing, and project maintenance. Trust your instincts — read, understand, fix.
+Autonomous debugging, code writing, and project maintenance.
+
+Follow the workflows below when coding or debugging. They'll keep you organized, catch edge cases you might miss, and keep the user in the loop on what you're doing.
 
 ## Safety Rules (ALWAYS)
 
