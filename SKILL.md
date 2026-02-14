@@ -1,6 +1,9 @@
 ---
 name: ultra-agent-stinct
 description: "Autonomous coding, debugging, and code maintenance. Use when the user asks to: fix a bug, debug an error, write code or scripts, run tests, review or refactor code, investigate stack traces or logs, make git commits, add a feature, or any coding task. Triggers: 'fix this', 'debug', 'write code', 'run tests', 'check the error', 'look at the code', 'commit', 'what's wrong with', 'refactor', 'add a feature', 'build', 'deploy', 'install'."
+version: 1.0.1
+author: grimmjoww
+homepage: https://github.com/grimmjoww/ultra-agent-stinct
 metadata: {"openclaw": {"emoji": "\u26a1", "os": ["darwin", "linux", "win32"]}}
 ---
 
@@ -80,7 +83,7 @@ exec command:"<appropriate test command>" workdir:"<project dir>"
 
 **2. Run tests:**
 ```
-exec command:"<test command>" workdir:"<project>" timeout:60000
+exec command:"<test command>" workdir:"<project>" timeout:120
 ```
 
 **3. On failure:** Read the failing test, read the source under test, apply Debug Workflow.

@@ -50,8 +50,10 @@ git reset HEAD <file>
 
 Discard changes to a file (DESTRUCTIVE — confirm first):
 ```bash
-git checkout -- <file>
+git restore <file>
 ```
+
+Legacy alternative: `git checkout -- <file>`
 
 ## Merge Conflicts
 

@@ -1,4 +1,4 @@
-# Escalation Guide: Self-Handle vs Spawn Claude Code
+# Escalation Guide: Self-Handle vs Spawn a Coding Agent
 
 ## Do It Yourself (Direct Tools)
 
@@ -13,29 +13,32 @@ Use `read`/`edit`/`exec` directly when:
 
 **Advantages:** Faster, less overhead, keeps context in your session.
 
-## Spawn Claude Code (Background Agent)
+## Spawn a Coding Agent (Heavy Tasks)
 
-Use `exec pty:true background:true command:"claude '<task>'"` when:
+If you have a coding agent CLI installed (e.g. Claude Code, Codex, Aider), spawn it for heavy tasks:
+
+```
+exec pty:true background:true command:"<agent> '<task description>'"
+```
+
+Use this when:
 - Multi-file refactor (3+ files changing)
 - Entire new feature with tests
 - Complex debugging needing deep codebase exploration
 - Tasks needing extended autonomous coding (>10 tool calls)
 - Build/deploy pipelines taking >60 seconds
-- When the user says "use Claude Code for this"
+- When the user explicitly asks you to delegate
 
 **Advantages:** Dedicated context window, autonomous multi-step work, won't bloat your session.
 
-## Spawn Codex (Alternative)
-
-```bash
-exec pty:true background:true command:"codex exec --full-auto '<task>'"
-```
-
-Use for quick autonomous fixes when Claude Code is overkill.
+**Common coding agent CLIs:**
+- `claude` — Claude Code (Anthropic)
+- `codex` — Codex CLI (OpenAI)
+- `aider` — Aider (open source)
 
 ## Monitoring Spawned Agents
 
-```bash
+```
 process action:list                          # See all sessions
 process action:poll sessionId:<id>           # Check if done
 process action:log sessionId:<id>            # Read output
